@@ -1,3 +1,0 @@
-# Ignorar contenidos de la carpeta de assets
-# (imágenes y otros archivos de front-end)
-/frontend/assets/*
