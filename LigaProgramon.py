@@ -48,18 +48,21 @@ class LigaProgramon:
         for numero in range(len(programones)):
             print(f'[{numero}] {programones[numero]}')
             number = int(numero)
-        print(f"[{number + 1}] Salir")
+        print(f"[{number + 1}] Volver")
+        print(f"[{number + 2}] Salir")
 
         #elegir programon
         numero_menu = input()
-        while checkeador(len(programones) + 1, numero_menu) != True:
+        while checkeador(len(programones) + 2, numero_menu) != True:
             print('El caracter que haz ingresado no corresponde'
             ' ha alguna accion conocida, porfavor ingresa '
             'otro numero')
             numero_menu = input()
         seleccion = int(numero_menu)
-        if seleccion == number + 1:
+        if seleccion == number + 2:
             sys.exit()
+        elif seleccion == number + 1:
+            return False
         programon_elegido = self.entrenador_elegido[1][seleccion]
         atributos_programones = diccionario_programones()
         programon_elegido_atris = atributos_programones[programon_elegido]

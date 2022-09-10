@@ -5,11 +5,11 @@ lista_entrenas = [['Kaylee Robinson', ['Reshiram'], 87, ['raro+', 'ziuela']], ['
 
 todos_entrenas = ['Kaylee Robinson', 'Ricardo Walters', 'Juan Vaughn', 'Lori Wheeler', 'Kellie Stokes', 'Michael Hanna', 'James Small', 'Charles Cooley', 'Cassandra Taylor', 'Mary Powell', 'Thomas Stokes', 'Jeffrey Miller', 'Kelli Morgan', 'Dillon Velez', 'Amy Solomon', 'Suzanne Davies']
 
-prueba = LigaProgramon(lista_entrenas, 7, todos_entrenas)
+instanciar = LigaProgramon(lista_entrenas, 7, todos_entrenas)
 
 
 
-entrenas_insta = prueba.crear_entrenadores()
+entrenas_insta = instanciar.crear_entrenadores()
 dic_entres_progras_insta = {}
 for entrenador in entrenas_insta:
     entrena = entrenas_insta[entrenador]
@@ -19,23 +19,53 @@ for entrenador in entrenas_insta:
         dic_entres_progras_insta[entrena.nombre][programon] = programones_insta[programon]
 
 #primera ronda
-ganadore = prueba.simular_ronda(dic_entres_progras_insta)
-perdedores1 = prueba.perdedores
+ganadore = instanciar.simular_ronda(dic_entres_progras_insta)
+perdedores1 = instanciar.perdedores
 
 #segunda ronda
 dict2 = dic_entres_progras_insta.copy()
-for perdedor in perdedores1:
+for perdedor in instanciar.perdedores:
     del dict2[perdedor]
-holi = prueba.simular_ronda(dict2)
+holi = instanciar.simular_ronda(dict2)
 
 #tercera ronda
 dict3 = dic_entres_progras_insta.copy()
-for perdedor in prueba.perdedores:
+for perdedor in instanciar.perdedores:
     del dict3[perdedor]
-hi = prueba.simular_ronda(dict3)
+hi = instanciar.simular_ronda(dict3)
 
 #cuarta ronda
 dict4 = dic_entres_progras_insta.copy()
-for perdedor in prueba.perdedores:
+for perdedor in instanciar.perdedores:
     del dict4[perdedor]
-jello = prueba.simular_ronda(dict4)
+jello = instanciar.simular_ronda(dict4)
+
+
+elif ronda == 2:
+    perdedores1 = instanciar.perdedores
+    dict2 = dic.copy()
+    for perdedor in perdedores1:
+        del dict2[perdedor]
+    stop = instanciar.simular_ronda(dict2)
+    if stop == 'perdio':
+        para = True
+    else:
+        para = False
+elif ronda == 3:
+    dict3 = dic.copy()
+    for perdedor in instanciar.perdedores:
+        del dict3[perdedor]
+    stop = instanciar.simular_ronda(dict3)
+    if stop == 'perdio':
+        para = True
+    else:
+        para = False
+elif ronda == 4:
+    dict4 = dic.copy()
+    for perdedor in instanciar.perdedores:
+        del dict4[perdedor]
+    stop = instanciar.simular_ronda(dict4)
+    if stop == 'perdio':
+        para = True
+    else:
+        para = False
